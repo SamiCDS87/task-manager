@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+        <title>Gestionnaire de tâches</title>
+    </head>
+
+    <body>
+
+        <div class="container">
+
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+
+                <h2 class="logo">
+                    <span class="folder-icon">
+                        <i data-lucide="folder">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder-kanban-icon lucide-folder-kanban"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/><path d="M8 10v4"/><path d="M12 10v2"/><path d="M16 10v6"/></svg>
+                        </i>
+                    </span>
+                    Espace de travail
+                </h2>
+
+                <!-- MENU -->
+                <nav>
+
+                    <ul>
+                        <li class="menu-item active">
+                            <a href="#">Toutes les tâches</a>
+                        </li>
+
+                        <li class="menu-item">
+
+                            <div class="menu-left">
+                                <span class="status-dot todo"></span>
+                                <a href="#">À faire</a>
+                            </div>
+
+                            <span class="sidebar-count" id="todo-count-sidebar">
+                                0
+                            </span>
+
+                        </li>
+
+                        <li class="menu-item">
+
+                            <div class="menu-left">
+                                <span class="status-dot doing"></span>
+                                <a href="#">En cours</a>
+                            </div>
+
+                            <span class="sidebar-count" id="doing-count-sidebar">
+                                0
+                            </span>
+
+                        </li>
+
+                        <li class="menu-item">
+
+                            <div class="menu-left">
+                                <span class="status-dot done"></span>
+                                <a href="#">Terminées</a>
+                            </div>
+
+                            <span class="sidebar-count" id="done-count-sidebar">
+                                0
+                            </span>
+
+                        </li>
+                    </ul>
+
+                </nav>
+
+            </aside>
+
+            <!-- CONTENU PRINCIPAL -->
+            <div class="content">
+
+                <!-- TOP-BAR -->
+                <header class="top-bar">
+                    <h1>Gestionnaire de tâches</h1>
+                    <button class="btn-add" id="add-task-btn">Nouvelle tâche</button>
+                </header>
+
+                <!-- COLONNES KANBAN -->
+                <main class="kanban">
+
+                    <div class="kanban-column">
+
+                        <h3 class="column-title">
+
+                            <div class="status-title-left">
+                                <span class="status-dot todo"></span>
+                                À faire
+                            </div>
+
+                            <span class="column-count" id="todo-count-column">
+                                0
+                            </span>
+
+                        </h3>
+
+                        <div class="tasks-container" id="todo"></div>
+
+                    </div>
+
+                    <div class="kanban-column">
+
+                        <h3 class="column-title">
+
+                            <div class="status-title-left">
+                                <span class="status-dot doing"></span>
+                                En cours
+                            </div>
+
+                            <span class="column-count" id="doing-count-column">
+                                0
+                            </span>
+
+                        </h3>
+
+                        <div class="tasks-container" id="doing"></div>
+
+                    </div>
+
+                    <div class="kanban-column">
+
+                        <h3 class="column-title">
+                            <div class="status-title-left">
+                                <span class="status-dot done"></span>
+                                Terminé
+                            </div>
+
+                            <span class="column-count" id="done-count-column">
+                                0
+                            </span>
+
+                        </h3>
+
+                        <div class="tasks-container" id="done"></div>
+                        
+                    </div>
+
+                </main>
+
+            </div>
+
+        </div>
+
+        <!-- AFFICHAGE DES TÂCHES -->
+        <div class="modal hidden" id="task-modal">
+
+            <div class="modal-content">
+
+                <h2>Nouvelle tâche</h2>
+
+                <input type="text" id="task-title" placeholder="Titre de la tâche">
+
+                <textarea id="task-description" placeholder="Description (optionnelle)"></textarea>
+
+                <div class="modal-actions">
+                    <button id="cancel-btn">Annuler</button>
+                    <button id="create-btn">Ajouter</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
